@@ -14,6 +14,7 @@
   pages={33},
   year={2020},
   publisher={Nature Publishing Group UK London}
+  url={https://doi.org/10.1038/s41698-020-00138-z}
 }
 
 @article{jin2019commensal,
@@ -31,4 +32,29 @@
   pages={998--1013},
   year={2019},
   publisher={Elsevier}
+  url={doi.org/10.1016/j.cell.2018.12.040}
+}
+
+@article{yan2015discovery,
+  % Thesis: The authors claim to have found a decent classifier of lung cancer vs not based on oral microbiota, in particular by looking for elevated levels of Capnocytophaga and Veillonella in saliva. 
+  % My opinions: Delicious. Finally, some good fucking food. 
+  % Now, this might be of only so much help to me personally. This is a study that was specifically done on humans with a >10+ year history of smoking, and I'm specifically trying to do things on non smokers. 
+  % But this study was done in China, and their rationale was the fairly simple, "[s]ince smoking may affect the growth of bacteria in the oral cavity, only subjects with a smoking history of over 10 years were selected"
+  % I suspect strongly this was done out of availability: my understanding is that smoking rates in China are pretty high, and obviously P(smoking|Chinese lung cancer) > P(smoking|Chinese)
+  % They also explicitly checked, "None of the subjects, including the patients and the controls, manifested other diseases related to salivary bacteria, such as diabetes, immune dysfunction, herpes viral infections, or oral mucosal ulcers"
+  % The researchers looked for bacterial populations with elevated or reduced levels in saliva by comparing results in 30 people: 10 with squamous cell carcinoma, 10 with adenocarcinoma, and 10 patients without lung cancer. 
+  % They found in their discovery group, "Capnocytophaga,  Selenomonas, and Veillonella were found to be more abundant in both SCC and AC patients, whereas Neisseria was less abundant in both SCC and AC patients than the controls"
+  % When they validated, they did it on a new cohort of 56 people, (13 LUSC, 28 LUAD, 15 without cancer). Now, the main criticisms I have are all their samples are male biased and have a clear age difference between the groups (SCC older than AC older than control). Also, their cancer patients skewed heavily late stage
+  % This is a minor criticism though: they noted it explicitly and I would put money on the table again that they were working with what they had. 
+  % When they tried to validate, they found that the best classifier was looking for elevated Capnocytophaga and Veillonella, without looking for reduced Neisseria (which seemed to spoil their classifer)
+  % They also found that Veillonella tended to be better at discriminating LUSC than LUAD, while the inverse was marginally true for Capnocytophaga. 
+  % They did note that while Nesseria wasn't particularly good at _discriminating_ cancer from not, the reduced levels are supported by other cancers showing similar things. 
+  title={{Discovery and validation of potential bacterial biomarkers for lung cancer}},
+  author={Yan, Xinmin and Yang, Mingxia and Liu, Juan and Gao, Ruichen and Hu, Jihong and Li, Jiong and Zhang, Lijun and Shi, Yujia and Guo, Hongrong and Cheng, Jinluo and others},
+  journal={{American Journal of Cancer Research}},
+  volume={5},
+  number={10},
+  pages={3111},
+  year={2015}
+  url={https://pmc.ncbi.nlm.nih.gov/articles/PMC4656734/}
 }
