@@ -1,0 +1,72 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: CalumBibliography.aux
+The style file: plain.bst
+Database file #1: CalumCitationsForDocument.bib
+I was expecting a `,' or a `}'---line 12 of file CalumCitationsForDocument.bib
+ :   
+ :   url={https://doi.org/10.1038/s41698-020-00138-z}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 24 of file CalumCitationsForDocument.bib
+ :   
+ :   url={doi.org/10.1016/j.cell.2018.12.040}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 35 of file CalumCitationsForDocument.bib
+ :   
+ :   url={https://pmc.ncbi.nlm.nih.gov/articles/PMC4656734/}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 94 of file CalumCitationsForDocument.bib
+ :   
+ :   url={https://pmc.ncbi.nlm.nih.gov/articles/30323970/}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 132 of file CalumCitationsForDocument.bib
+ :   
+ :   url={https://doi.org/10.7554/eLife.06907}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You've used 5 entries,
+            2118 wiz_defined-function locations,
+            538 strings with 5827 characters,
+and the built_in function-call counts, 3007 in all, are:
+= -- 248
+> -- 295
+< -- 0
++ -- 117
+- -- 112
+* -- 313
+:= -- 550
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 69
+chr.to.int$ -- 0
+cite$ -- 5
+duplicate$ -- 55
+empty$ -- 129
+format.name$ -- 112
+if$ -- 551
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 5
+newline$ -- 28
+num.names$ -- 10
+pop$ -- 59
+preamble$ -- 1
+purify$ -- 64
+quote$ -- 0
+skip$ -- 37
+stack$ -- 0
+substring$ -- 117
+swap$ -- 5
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 20
+warning$ -- 0
+while$ -- 17
+width$ -- 6
+write$ -- 57
+(There were 5 error messages)
