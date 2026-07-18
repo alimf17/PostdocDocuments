@@ -46,7 +46,7 @@
   % They found in their discovery group, "Capnocytophaga,  Selenomonas, and Veillonella were found to be more abundant in both SCC and AC patients, whereas Neisseria was less abundant in both SCC and AC patients than the controls"
   % When they validated, they did it on a new cohort of 56 people, (13 LUSC, 28 LUAD, 15 without cancer). Now, the main criticisms I have are all their samples are male biased and have a clear age difference between the groups (SCC older than AC older than control). Also, their cancer patients skewed heavily late stage
   % This is a minor criticism though: they noted it explicitly and I would put money on the table again that they were working with what they had. 
-  % When they tried to validate, they found that the best classifier was looking for elevated Capnocytophaga and Veillonella, without looking for reduced Neisseria (which seemed to spoil their classifer)
+  % When they tried to validate, they found that the best classifier was looking for elevated  and Veillonella, without looking for reduced Neisseria (which seemed to spoil their classifer)
   % They also found that Veillonella tended to be better at discriminating LUSC than LUAD, while the inverse was marginally true for Capnocytophaga. 
   % They did note that while Nesseria wasn't particularly good at _discriminating_ cancer from not, the reduced levels are supported by other cancers showing similar things. 
   title={{Discovery and validation of potential bacterial biomarkers for lung cancer}},
@@ -193,6 +193,7 @@
          % I would have liked to see more multiple testing correction (also, ROC instead of PR, booooo, though the cohorts were about equal sized, so grumble grumble fine). 
          % The biggest confounder I can see here is that the first control they used was a followup after COVID infection, and COVID is notorious for lingering. 
          % This reflected in a lot of their results, which they discussed at length. 
+         % But overall, the classifier that the group used seems pretty robus
 	annote = {doi: 10.1016/j.ebiom.2023.104584},
 	author = {Myers, Renelle and Ruszkiewicz, Dorota M. and Meister, Austin and Bartolomeu, Crista and Atkar-Khattra, Sukhinder and Thomas, C. L. Paul and Lam, Stephen},
 	date = {2023/06/01},
@@ -213,7 +214,10 @@
 	bdsk-url-1 = {https://doi.org/10.1016/j.ebiom.2023.104584}
 }
 
-@ARTICLE{BordenetalMyersOralCancerVOCs,
+@article{BordenetalMyersOralCancerVOCs,
+  % Thesis: The authors posit that breathomics data of VOCs and oral brushing sample data of VOCs can differentiate between oral cancer and no oral cancer. 
+  % My opinion: This is pretty similar to the RenMyersCovid2023 Covid paper, and I have much of the same opinions and objections (multiple testing correction multiple testing correction multiple testing correction)
+  % Though, for all that I'm hammering multiple testing corrections, I actually don't think that that is the most approach here: the most correct approach might be something more like a a comparison of dirichlet distributions. 
   title     = "Characterizing volatile organic compound profiles in oral cancer
                using multiple sample collection approaches by {GC-IMS} and
                {TD-GC-MS}",
@@ -256,6 +260,120 @@
                spectrometry; Mass spectrometry; Oral cancer; Volatile organic
                compounds",
   copyright = "https://creativecommons.org/licenses/by-nc-nd/4.0",
+  language  = "en"
+}
+
+
+
+@article{Wang2022,
+  % I did not read this all the way through. I only used it to compare the breathomics result they got with Ren Myers's 2023 COVID paper
+  % The long and short of it is that I only found two intersections work noting: heptanal and cyclohexanone
+  % God, breathomics is brutal. Wang found both to be very significantly elevated in pre resection lung cancer, as compared to immediately
+  % post resection (3 days) and some time after (4 weeks). But God, the variance on these readings makes to want to throw something.
+  % Ren Myers's team found that heptanal was elevated in their measurements, but that it wasn't significant. The only significant finding  
+  % is that cyclohexanone is signficantly elevated in COVID patients as opposed to different completely healthy ones. 
+  % The team at least detected elevation on average? But God, this is brutal. 
+  % Multiple testing correction could help narrow things down? But maybe too much to get something usable?
+  % This is hard. 
+  title = {Identification of lung cancer breath biomarkers based on perioperative breathomics testing: A prospective observational study},
+  volume = {47},
+  ISSN = {2589-5370},
+  url = {http://dx.doi.org/10.1016/j.eclinm.2022.101384},
+  DOI = {10.1016/j.eclinm.2022.101384},
+  journal = {eClinicalMedicine},
+  publisher = {Elsevier BV},
+  author = {Wang,  Peiyu and Huang,  Qi and Meng,  Shushi and Mu,  Teng and Liu,  Zheng and He,  Mengqi and Li,  Qingyun and Zhao,  Song and Wang,  Shaodong and Qiu,  Mantang},
+  year = {2022},
+  month = May,
+  pages = {101384}
+}
+
+@article{vega2023methionine,
+  % Thesis: the authors posit that lung adenocarcinoma cells tend to select for methionine producing bacteria in the tumor microenvironment
+  % Pre reading:
+  %   Before I even read this paper, I decided to check out the elevated microbes in the Yan 2015 paper to see if they can synthesize methionine. 
+  %   After way too much work, I decided to tentatively conclude that Capnocytophaga can probably synthesize methiothine. 
+  %   I could not find direct evidence for or against this in the literature. Instead, I looked on OrthoDB for "metC", which led to me to group "9805807at2"
+  %   When I looked in this group, I found evidence for metC orthologs not in genus Capnocytophaga, but instead in the genuses Aquimarina (Aquimarina atlantica) 
+  %   and Tenacibaculum (Tenacibaculum sp. Bg11-29). I picked species on the simple basis of "what has a uniprot entry in this genus" (sidenote:
+  %   the uniprot entries are NOT great). When I BLASTed the protein sequences in uniprot against each other, I got 78% sequence identity and 91% positives. 
+  %   Given that these are both about as related to each other as they are to Capnocytophaga, I decided to conclude that it was likely that Capnocytophaga could 
+  %   synthesize methionine, because the orthologs probably come from a common ancestor up the family tree, and it would be a funny coincidence if only Capnocytophaga
+  %   lost the ability to synthesize methionine. 
+  %   However, Veillonella does not have a metC ortholog. This doesn't mean anything decisive: it could have some other methiothine synthesis gene, and I'm too lazy to 
+  %   check further. 
+  %   Now, the Yan paper looked in oral microbiota, which is not the same as lung microbiota, but it's not nothing. 
+  % My opinion:
+  %   
+  title={Methionine-producing tumor micro (be) environment fuels growth of solid tumors},
+  author={Vega, Alexis A and Marshall, Erin A and Noonan, Avery JC and Filho, Fernando Sergio Leitao and Yang, Julia and Stewart, Greg L and Johnson, Fraser D and Vucic, Emily A and Pewarchuk, Michelle E and Shah, Parag P and others},
+  journal={Cellular Oncology},
+  volume={46},
+  number={6},
+  pages={1659--1673},
+  year={2023},
+  publisher={Springer}
+}
+
+@article{valanarasu2026multimodal,
+  %Thesis: The researchers created GigaTIME, a cross-modal translator which generates virtual multiplex immunofluorescence (mIF) images from hematoxylin and eosin (H&E) slides, trained on 40 million cells with H&E paired with mIF data in 21 proteins. 
+  % Pre reading: Looking at the abstract, they had a lot of patients and cells, but they had shockingly few proteins. I will have to keep an eye on those proteins because if they're very similar, that will skew the data. 
+  % My opinion:
+  % They drew conclusions by running this model on a whole bunch of cancers on 14000+ patients when they trained it on 21 patients with specifically Lung Adenocarcinoma. This is bioinformatics as astrology. 
+  title={Multimodal AI generates virtual population for tumor microenvironment modeling},
+  author={Valanarasu, Jeya Maria Jose and Xu, Hanwen and Usuyama, Naoto and Kim, Chanwoo and Wong, Cliff and Argaw, Peniel and Shimol, Racheli Ben and Crabtree, Angela and Matlock, Kevin and Bartlett, Alexandra Q and others},
+  journal={Cell},
+  volume={189},
+  number={2},
+  pages={386--400},
+  year={2026},
+  publisher={Elsevier}
+}
+
+@article{pinyakong2003unique,
+% Did not read this super thoroughly: it's just my citation for Sphingobium being particularly known for eating PAHs
+  title={The unique aromatic catabolic genes in sphingomonads degrading polycyclic aromatic hydrocarbons (PAHs)},
+  author={Pinyakong, Onruthai and Habe, Hiroshi and Omori, Toshio},
+  journal={The Journal of general and applied microbiology},
+  volume={49},
+  number={1},
+  pages={1--19},
+  year={2003},
+  publisher={Applied Microbiology, Molecular and Cellular Biosciences Research Foundation}
+  url={ https://doi.org/10.2323/jgam.49.1}
+}
+
+@ARTICLE{Coleman2021-vh,
+% This is the paper I rely upon for classing Patescibacteria as under the kingdom of Bacillati (they call the Patescibacteria by the name CPR)
+% This paper is also my source for classing Bacillota (their name: Fimicutes) as close to Actinomycetota. The paper also says that Cyanobacteria
+% are a Bacillati outgroup to all three of these. 
+  title     = "A rooted phylogeny resolves early bacterial evolution",
+  author    = "Coleman, Gareth A and Dav{\'\i}n, Adri{\'a}n A and
+               Mahendrarajah, Tara A and Sz{\'a}nth{\'o}, L{\'e}n{\'a}rd L and
+               Spang, Anja and Hugenholtz, Philip and Sz{\"o}ll{\H o}si,
+               Gergely J and Williams, Tom A",
+  abstract  = "A rooted bacterial tree is necessary to understand early
+               evolution, but the position of the root is contested. Here, we
+               model the evolution of 11,272 gene families to identify the
+               root, extent of horizontal gene transfer (HGT), and the nature
+               of the last bacterial common ancestor (LBCA). Our analyses root
+               the tree between the major clades Terrabacteria and Gracilicutes
+               and suggest that LBCA was a free-living flagellated, rod-shaped
+               double-membraned organism. Contrary to recent proposals, our
+               analyses reject a basal placement of the Candidate Phyla
+               Radiation, which instead branches sister to Chloroflexota within
+               Terrabacteria. While most gene families (92\%) have evidence of
+               HGT, overall, two-thirds of gene transmissions have been
+               vertical, suggesting that a rooted tree provides a meaningful
+               frame of reference for interpreting bacterial evolution.",
+  journal   = "Science",
+  publisher = "American Association for the Advancement of Science (AAAS)",
+  volume    =  372,
+  number    =  6542,
+  pages     = "eabe0511",
+  month     =  may,
+  year      =  2021,
+  copyright = "https://www.sciencemag.org/about/science-licenses-journal-article-reuse",
   language  = "en"
 }
 
